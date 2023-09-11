@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="todo-app">
+      <h2>To-Do List 🗒️</h2>
+      <div class="inputField">
+        <input type="text" id="input-box" placeholder="Add your tasks" autofocus/>
+        <button type="button" id="btn" onclick="addTask() "><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <ul id="addTask" class="Todolist">
+        <li><div id="result" onclick="done()"></div>
+        </li>
+      </ul>
+      <footer class="clear-btn">
+        <button type="button" id="clear-btn" onclick="clearAll()">Clear</button>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/b32ebc7f13.js" crossorigin="anonymous">
+  </script>
+</body>
+</html>
