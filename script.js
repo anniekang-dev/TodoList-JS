@@ -1,6 +1,8 @@
+// input box
 const btn = document.getElementById('btn');
 let inputBox = document.getElementById('input-box');
 let result = document.getElementById('result');
+let cb = document.getElementById('check-box');
 
 function addTask() {
   if(inputBox.value === ''){
@@ -16,29 +18,23 @@ function addTask() {
     del.addEventListener('click', function(){
       li.remove();
     });
+    inputBox.value = '';
   }
 }
 
-function done() {
-  addTask.value = '';
-  addTask.focus();
-  li.addEventListener('click',
-  function(){
-    li.style.textDecoration = 'line-through'
-    li.style.color = 'grey';
-  })
-}
-
-const allClearBtn = document.getElementById('clear-btn');
-
-function clearAll() {
-  if(confirm('Are you sure you want to clear all tasks?')){
-    if(inputBox.value === ''){
-      alert('There are no tasks to clear');
-    }
-    else{
+// clear button
+function clearAll(){
       inputBox.value = '';
       result.innerHTML = '';
-    }
   }
+
+// keypress event
+const init = () => {
+    inputBox.addEventListener('keypress', (e) =>{
+        if( e.key === 'Enter' ){
+            addTask(e.target.value); inputBox.value ='';
+        }
+    })
 }
+
+init()
