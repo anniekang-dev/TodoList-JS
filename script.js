@@ -1,8 +1,7 @@
 // input box
 const btn = document.getElementById('btn');
-let inputBox = document.getElementById('input-box');
+let inputBox = document.getElementById('inputBox');
 let result = document.getElementById('result');
-let cb = document.getElementById('check-box');
 
 function addTask() {
   if(inputBox.value === ''){
@@ -10,17 +9,23 @@ function addTask() {
   }   
   else {
     let li = document.createElement('li');
-    let del = document.createElement('button');
-    li.innerHTML = inputBox.value;
+    li.innerHTML = '<input type="checkbox" id=checkbox> ';
+    li.innerHTML += inputBox.value;
     result.appendChild(li);
-    li.appendChild(del);
-    del.innerText = 'X';
-    del.addEventListener('click', function(){
-      li.remove();
-    });
-    inputBox.value = '';
-  }
-}
+    inputBox.value ='';
+    
+    li.addEventListener('click', (e) => {
+      if(e.target.checked === true){
+        li.style.textDecoration = "line-through";
+        li.style.color = "grey";
+      }
+      else{
+        li.style.textDecoration = "none";
+        li.style.color = "black";
+      }
+    })
+  } 
+ }
 
 // clear button
 function clearAll(){
