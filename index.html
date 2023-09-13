@@ -11,16 +11,17 @@
       <h2>To-Do List 🗒️</h2>
       <!-- input box -->
       <div class="inputField">
-        <input type="text" id="input-box" placeholder="Add your tasks" autofocus/>
-        <button type="button" id="btn" onclick="addTask() "><i class="fa-solid fa-plus"></i></button>
+        <input id="inputBox" type="text" placeholder="What are you going to do today?" autofocus/>
+        <button id="btn" type="button" onclick="addTask() "><i class="fa-solid fa-plus"></i></button>
       </div>
       <!-- todo list -->
-      <ul id="addTask" class="Todolist">
-        <li>
-          <!-- <input type="checkbox" name="" id="check-box"> -->
-          <div id="result"></div>
-        </li>
-      </ul>
+      <div class="wrapper">
+        <ul id="toDoList">
+          <li>
+            <div id="result"></div>
+          </li>
+        </ul>
+      </div>
       <!-- clear button -->
       <footer class="clear-btn">
         <button type="button" id="clear-btn" onclick="clearAll()">Clear All</button>
